@@ -1,7 +1,7 @@
 // require('dotenv');
-const BASE_URL = process.env.REACT_APP_BASE_URL;
+// const BASE_URL = process.env.REACT_APP_BASE_URL;
 // console.log("BASE URL: " + process.env.REACT_APP_BASE_URL);
-//const BASE_URL = "http://localhost:4000/api/v1";
+const BASE_URL = "https://eduverse-backend.onrender.com/api/v1";
 
 // AUTH ENDPOINTS
 export const endpoints = {
