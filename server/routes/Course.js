@@ -88,6 +88,7 @@ router.post("/updateCourseProgress", auth, isStudent, updateCourseProgress);
 // To get Course Progress
 // router.post("/getProgressPercentage", auth, isStudent, getProgressPercentage)
 // Delete a Course
+//todo review req
 router.delete("/deleteCourse", deleteCourse);
 
 // ********************************************************************************************************

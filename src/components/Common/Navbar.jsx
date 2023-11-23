@@ -10,6 +10,7 @@ import { apiConnector } from "../../services/apiConnector";
 import { categories } from "../../services/apis";
 import { ACCOUNT_TYPE } from "../../utils/constants";
 import ProfileDropdown from "../core/Auth/ProfileDropdown";
+import MenuDropDown from "./MenuDropDown";
 
 // const subLinks = [
 //   {
@@ -39,6 +40,7 @@ function Navbar() {
   //! Uncomment the following
   const [subLinks, setSubLinks] = useState([]);
   const [loading, setLoading] = useState(false);
+  const [open, setOpen] = useState(false);
 
   //! Uncomment the following
   useEffect(() => {
@@ -162,9 +164,20 @@ function Navbar() {
           )}
           {token !== null && <ProfileDropdown />}
         </div>
-        <button className="mr-4 md:hidden">
-          <AiOutlineMenu fontSize={24} fill="#AFB2BF" />
-        </button>
+        <div className="relative">
+          <button className="mr-4 md:hidden" onClick={() => setOpen(!open)}>
+            <AiOutlineMenu fontSize={24} fill="#AFB2BF" />
+          </button>
+
+          {open && (
+            <MenuDropDown
+              setOpen={setOpen}
+              loading={loading}
+              matchRoute={matchRoute}
+              subLinks={subLinks}
+            />
+          )}
+        </div>
       </div>
     </div>
   );
